@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | StockSim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #121212; color: #ffffff; }
+        .glass { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="app_icon.png" alt="Logo" class="w-10 h-10">
+            <a href="index.html" class="text-xl font-extrabold tracking-tight">StockSim</a>
+        </div>
+        <div class="flex space-x-8 text-sm font-medium text-gray-400">
+            <a href="features.html" class="text-white transition">Features</a>
+            <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+            <a href="support.html" class="hover:text-white transition">Support</a>
+        </div>
+    </nav>
+
+    <section class="max-w-6xl mx-auto px-6 py-20 overflow-hidden">
+    <h1 class="text-5xl font-extrabold mb-4 tracking-tight" data-aos="fade-right">Feature Gallery</h1>
+    <p class="text-gray-500 mb-12" data-aos="fade-right" data-aos-delay="100">Explore the powerful interface built with Jetpack Compose and Material 3.</p>
+
+    <div class="flex overflow-x-auto pb-10 space-x-6 snap-x snap-mandatory scrollbar-hide" data-aos="fade-up">
+        
+        <div class="flex-none w-80 snap-center">
+            <div class="glass p-4 rounded-3xl transition-transform hover:scale-105 duration-300">
+                <img src="Screenshot_20260130_044722.png" class="rounded-2xl mb-4" alt="Market Dashboard">
+                <h3 class="text-lg font-bold px-2">Market Dashboard</h3>
+                <p class="text-gray-400 text-sm px-2 mt-2">View real-time stock lists for AAPL, MSFT, and NVDA with live percentage changes.</p>
+            </div>
+        </div>
+
+        <div class="flex-none w-80 snap-center">
+            <div class="glass p-4 rounded-3xl transition-transform hover:scale-105 duration-300">
+                <img src="Screenshot_20260130_044206.png" class="rounded-2xl mb-4" alt="Trade Execution">
+                <h3 class="text-lg font-bold px-2">Precision Trading</h3>
+                <p class="text-gray-400 text-sm px-2 mt-2">Execute BUY/SELL orders with detailed market stats including Day High, Low, and Prev Close.</p>
+            </div>
+        </div>
+
+        <div class="flex-none w-80 snap-center">
+            <div class="glass p-4 rounded-3xl transition-transform hover:scale-105 duration-300">
+                <img src="Screenshot_20260130_045119.png" class="rounded-2xl mb-4" alt="Portfolio Tracking">
+                <h3 class="text-lg font-bold px-2">Portfolio Tracking</h3>
+                <p class="text-gray-400 text-sm px-2 mt-2">Monitor your active positions and total Buying Power with a professional high-contrast UI.</p>
+            </div>
+        </div>
+
+        <div class="flex-none w-80 snap-center">
+            <div class="glass p-4 rounded-3xl transition-transform hover:scale-105 duration-300">
+                <img src="Screenshot_20260130_045133.png" class="rounded-2xl mb-4" alt="Global Leaderboard">
+                <h3 class="text-lg font-bold px-2">Global Leaderboard</h3>
+                <p class="text-gray-400 text-sm px-2 mt-2">Compete with users like Rahul Menon and climb the ranks across different difficulty levels.</p>
+            </div>
+        </div>
+
+        <div class="flex-none w-80 snap-center">
+            <div class="glass p-4 rounded-3xl transition-transform hover:scale-105 duration-300">
+                <img src="Screenshot_20260130_044129.png" class="rounded-2xl mb-4" alt="Search Interface">
+                <h3 class="text-lg font-bold px-2">Smart Search</h3>
+                <p class="text-gray-400 text-sm px-2 mt-2">Quickly find and analyze stocks like MSFT using the integrated search bar and user profile quick-access.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+    <footer class="text-center py-12 text-xs text-gray-600 border-t border-white/5">
+        &copy; 2026 Rahul Menon | Built with Material 3
+    </footer>
+</body>
+</html>
