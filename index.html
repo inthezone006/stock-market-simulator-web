@@ -16,17 +16,28 @@
 </head>
 <body class="selection:bg-white selection:text-black">
 
-    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center">
+    <nav class="max-w-6xl mx-auto px-6 py-6 md:py-8 flex justify-between items-center">
         <div class="flex items-center space-x-3">
             <img src="app_icon.png" alt="Logo" class="w-10 h-10">
             <span class="text-xl font-extrabold tracking-tight">Stock Market Simulator</span>
         </div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+        <button id="menuBtn" class="md:hidden text-gray-300 hover:text-white" aria-label="Open menu">
+            ☰
+        </button>
+        <div id="menuDesktop" class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
             <a href="features" class="hover:text-white transition">Features</a>
             <a href="privacy" class="hover:text-white transition">Privacy</a>
             <a href="support" class="hover:text-white transition">Support</a>
         </div>
     </nav>
+
+    <div id="menuMobile" class="md:hidden hidden px-6 pb-4">
+        <div class="glass rounded-2xl p-4 space-y-3 text-sm font-medium text-gray-300">
+            <a href="features" class="block hover:text-white transition">Features</a>
+            <a href="privacy" class="block hover:text-white transition">Privacy</a>
+            <a href="support" class="block hover:text-white transition">Support</a>
+        </div>
+    </div>
 
     <header class="max-w-4xl mx-auto px-6 pt-20 pb-32 text-center">
         <img src="app_icon.png" alt="App Icon" class="w-32 h-32 mx-auto mb-8">
@@ -71,6 +82,16 @@
     <footer class="text-center py-12 text-xs text-gray-600 border-t border-white/5">
         &copy; 2026 Rahul Menon | Built with Material 3
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menuMobile = document.getElementById('menuMobile');
+        if (menuBtn && menuMobile) {
+            menuBtn.addEventListener('click', () => {
+                menuMobile.classList.toggle('hidden');
+            });
+        }
+    </script>
 
 </body>
 </html>
