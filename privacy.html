@@ -12,26 +12,28 @@
     </style>
 </head>
 <body>
-    <nav class="max-w-6xl mx-auto px-6 py-6 md:py-8 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <img src="app_icon.png" alt="Logo" class="w-10 h-10">
-            <a href="index" class="text-xl font-extrabold tracking-tight">Stock Market Simulator</a>
-        </div>
-        <button id="menuBtn" class="md:hidden text-gray-300 hover:text-white" aria-label="Open menu">
-            ☰
-        </button>
-        <div id="menuDesktop" class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-            <a href="features" class="hover:text-white transition">Features</a>
-            <a href="privacy" class="text-white transition">Privacy</a>
-            <a href="support" class="hover:text-white transition">Support</a>
-        </div>
-    </nav>
+    <div class="relative">
+        <nav class="max-w-6xl mx-auto px-6 py-6 md:py-8 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="app_icon.png" alt="Logo" class="w-10 h-10">
+                <a href="index" class="text-xl font-extrabold tracking-tight">Stock Market Simulator</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-300 hover:text-white" aria-label="Open menu">
+                ☰
+            </button>
+            <div id="menuDesktop" class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="features" class="hover:text-white transition">Features</a>
+                <a href="privacy" class="text-white transition">Privacy</a>
+                <a href="support" class="hover:text-white transition">Support</a>
+            </div>
+        </nav>
 
-    <div id="menuMobile" class="md:hidden hidden px-6 pb-4">
-        <div class="rounded-2xl p-4 space-y-3 text-sm font-medium text-gray-300" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="features" class="block hover:text-white transition">Features</a>
-            <a href="privacy" class="block text-white transition">Privacy</a>
-            <a href="support" class="block hover:text-white transition">Support</a>
+        <div id="menuMobile" class="md:hidden hidden absolute left-0 right-0 top-full z-50 px-6 pb-4">
+            <div class="rounded-2xl p-4 space-y-3 text-sm font-medium text-gray-300" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <a href="features" class="block hover:text-white transition">Features</a>
+                <a href="privacy" class="block text-white transition">Privacy</a>
+                <a href="support" class="block hover:text-white transition">Support</a>
+            </div>
         </div>
     </div>
 
@@ -67,6 +69,21 @@
         if (menuBtn && menuMobile) {
             menuBtn.addEventListener('click', () => {
                 menuMobile.classList.toggle('hidden');
+            });
+            menuMobile.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    menuMobile.classList.add('hidden');
+                });
+            });
+            document.addEventListener('click', (event) => {
+                if (menuMobile.classList.contains('hidden')) {
+                    return;
+                }
+                const clickedMenu = menuMobile.contains(event.target);
+                const clickedButton = menuBtn.contains(event.target);
+                if (!clickedMenu && !clickedButton) {
+                    menuMobile.classList.add('hidden');
+                }
             });
         }
     </script>
